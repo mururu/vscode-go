@@ -646,13 +646,14 @@
         "go.formatTool": {
           "type": "string",
           "default": "goreturns",
-          "description": "Pick 'gofmt', 'goimports', 'goreturns' or 'goformat' to run on format.",
+          "description": "Pick 'gofmt', 'goimports', 'goreturns', 'goformat' or 'sqlfmt' to run on format.",
           "scope": "resource",
           "enum": [
             "gofmt",
             "goimports",
             "goreturns",
-            "goformat"
+            "goformat",
+            "sqlfmt"
           ]
         },
         "go.formatFlags": {

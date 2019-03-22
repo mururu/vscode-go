@@ -38,6 +38,10 @@ export class GoDocumentFormattingEditProvider implements vscode.DocumentFormatti
 			formatFlags.push('-style=indent=' + options.tabSize);
 		}
 
+		if (formatTool === 'sqlfmt') {
+			formatFlags.push('-s', filename);
+		}
+
 		return this.runFormatter(formatTool, formatFlags, document, token).then(edits => edits, err => {
 			if (typeof err === 'string' && err.startsWith('flag provided but not defined: -srcdir')) {
 				promptForUpdatingTool(formatTool);
